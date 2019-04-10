@@ -1,10 +1,12 @@
 import React from 'react'
-import { Typography } from 'antd';
+import { Typography } from 'antd'
 
 const { Title } = Typography;
 
-const SectionHeader = (props) => (
-	<Title level={3}>{props.header || "Section header"}</Title>
-)
+const SectionHeader = React.forwardRef((props, ref) => (
+	<div ref={ref}>
+		<Title level={3}>{props.header || "Section header"}</Title>
+	</div>
+))
 
 export default SectionHeader

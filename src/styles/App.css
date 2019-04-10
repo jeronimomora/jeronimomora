@@ -1,1 +1,5 @@
 @import '~antd/dist/antd.css';
+
+.ant-list {
+	margin-bottom: 25px;	
+}

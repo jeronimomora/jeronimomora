@@ -2,8 +2,8 @@ import React from 'react'
 import SectionHeader from './SectionHeader'
 import '../styles/CareerProfile.css'
 
-const CareerProfile = () => (
-	<div className="career-profile">
+const CareerProfile = React.forwardRef((props, ref) => (
+	<div className="career-profile" ref={ref}>
 		<SectionHeader header={"Career Profile"}/>
 		<p> 
 			Computational geometry engineer at Fictiv and UC Berkeley graduate with an M.S. in Mechanical Engineering. 
@@ -13,6 +13,6 @@ const CareerProfile = () => (
 			author on 2 published papers, and author of 1 paper in preparation for submission. 
 		</p>
 	</div>
-)
+))
 
 export default CareerProfile

@@ -18,10 +18,10 @@ const Sidebar = () => (
 		<br></br>
 		<Row>
 			<Col>
-				<Button type="primary" ghost>Education</Button>
+				<Button type="primary" ghost>Work Experience</Button>
 			</Col>
 			<Col>
-				<Button type="primary" ghost>Work Experience</Button>
+				<Button type="primary" ghost>Education</Button>
 			</Col>
 			<Col>
 				<Button type="primary" ghost>Projects</Button>
