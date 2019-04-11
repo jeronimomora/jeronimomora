@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography'
 const NavBar = (props) => {
     return(
         <div>
-	        <AppBar position="fixed" style={{ background: '#16a99b'}}>
+	        <AppBar position="fixed" style={{ background: '#16a99b', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
 	            <Toolbar>
 	                <Typography variant="title" color="inherit">
 	                	Jeronimo Mora
