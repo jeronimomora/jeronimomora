@@ -56,5 +56,3 @@ class App extends Component {
 }
 
 export default App;
-
-//style={{ display: 'flex', flexDirection: 'column', width: '50%', margin: 'auto', marginTop: 96, marginBottom: 32 }}
