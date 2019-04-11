@@ -1,11 +1,9 @@
 import React from 'react'
-import { Typography } from 'antd'
-
-const { Title } = Typography;
+import Typography from '@material-ui/core/Typography';
 
 const SectionHeader = React.forwardRef((props, ref) => (
 	<div ref={ref}>
-		<Title level={3}>{props.header || "Section header"}</Title>
+		<Typography variant="h4" gutterbottom>{props.header || "Section header"}</Typography>
 	</div>
 ))
 

@@ -1,10 +1,10 @@
 import React from 'react'
+import Typography from '@material-ui/core/Typography';
 
 const masters = {
 	title: 'Investigation into Energy Efficiency of Vector Field Based CNC Toolpaths',
 	content: (
-		<div>
-
+		<Typography variant='body1'>
 			<span><a href="https://drive.google.com/file/d/1DcDcItmi-_8l05dJRQT51-WO9Wz7RA0E/view?usp=sharing" 
 			target="_blank"
 			rel="noopener noreferrer">
@@ -14,13 +14,13 @@ const masters = {
 				Discovered systematic errors in previously published work and implemented improvements 
 				to experiments in order to make data collection more meaningful.
 			</span>            
-        </div>
+        </Typography>
         ),
 }
 const cncCV = {
 	title: '3D Printer Word Search Solver',
 	content: (
-		<div>
+		<Typography variant='body1'>
 			<span><a href="https://www.youtube.com/watch?v=JgW0SBVrisc" 
 			target="_blank"
 			rel="noopener noreferrer">
@@ -29,14 +29,14 @@ const cncCV = {
 				attached writing instrument. Designed a suitable writing instrument attachment for 
 				my 3D printer's toolhead.
 			</span>               
-        </div>
+        </Typography>
         ),
 }
 
 const embeddedSensors = {
 	title: 'Embedded Sensors in Additively Manufactured Parts',
 	content: (
-		<div>
+		<Typography variant='body1'>
 			<span>
 				<a href="https://drive.google.com/file/d/1JvvQqei_BCs0VS8OonA56zBQjIQKNBGk/view?usp=sharing" 
 				target="_blank"
@@ -47,7 +47,7 @@ const embeddedSensors = {
 				Created Wheatstone bridge circuit to measure internal strains in 3D 
 				printed beams using embedded strain gauges
 			</span>
-		</div>
+		</Typography>
 	),
 }
 

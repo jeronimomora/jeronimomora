@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import { Layout, Menu } from 'antd'
 import Experience from './Experience'
 import CareerProfile from './CareerProfile'
 import SectionHeader from './SectionHeader'
+import NavBar from './NavBar'
 import jobs from '../fixtures/jobs'
 import degrees from '../fixtures/degrees'
 import projects from '../fixtures/projects'
 import '../styles/App.css'
-
-const { Header, Content, } = Layout
 
 class App extends Component {
   constructor(){
@@ -21,52 +19,42 @@ class App extends Component {
   scrollTo({ top }){
     window.scrollTo({ top, behavior: 'smooth' })
   }
-  onMenuClick({ item, key, keyPath }){
-    switch(key){
-      case '0':
-        this.scrollTo({ top: this.careerProfileRef.current.offsetTop - 64 })
+  onMenuClick(section){
+    switch(section){
+      case 'CAREER_PROFILE':
+        this.scrollTo({ top: this.careerProfileRef.current.offsetTop - 75 })
         break      
-      case '1':
-        this.scrollTo({ top: this.workExperienceRef.current.offsetTop - 64 })
+      case 'WORK_EXPERIENCE':
+        this.scrollTo({ top: this.workExperienceRef.current.offsetTop - 75 })
         break
-      case '2':
-        this.scrollTo({ top: this.educationRef.current.offsetTop - 64 })
+      case 'EDUCATION':
+        this.scrollTo({ top: this.educationRef.current.offsetTop - 75 })
         break
-      case '3':
-        this.scrollTo({ top: this.projectsRef.current.offsetTop - 64 })
+      case 'PROJECTS':
+        this.scrollTo({ top: this.projectsRef.current.offsetTop - 75 })
         break
       default:
     }
   } 
   render() {
     return (
-        <Layout>
-          <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
-            <div style={{ float: 'left', color: 'white', margin: 'auto'}}>Jeronimo Mora </div>
-            <Menu
-              theme="dark"
-              mode="horizontal"
-              style={{ margin: 'auto', lineHeight: '64px' }}
-              onClick={this.onMenuClick.bind(this)}
-            >
-              <Menu.Item key="0">CareerProfile</Menu.Item>
-              <Menu.Item key="1">Work Experience</Menu.Item>
-              <Menu.Item key="2">Education</Menu.Item>
-              <Menu.Item key="3">Projects</Menu.Item>
-            </Menu>
-          </Header>
-          <Content style={{ display: 'flex', flexDirection: 'column', marginTop: 64, marginLeft: 200, marginRight: 200, marginBottom: 32 }}>
-              <CareerProfile ref={this.careerProfileRef}/>
+        <div style={{ background: '#F7F7F7', overflow: 'auto', display: 'flex', justifyContent: 'center'}}>
+          <NavBar onMenuClick={this.onMenuClick.bind(this)}/>
+          <div style={{ marginTop: 84, width: 500, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <SectionHeader header={"Career Profile"} ref={this.careerProfileRef}/>
+              <CareerProfile />
               <SectionHeader header={"Work Experience"} ref={this.workExperienceRef}/>
               <Experience experiences={jobs}/>              
               <SectionHeader header={"Education"} ref={this.educationRef}/>
               <Experience experiences={degrees} />              
               <SectionHeader header={"Projects"} ref={this.projectsRef}/>
               <Experience experiences={projects} />
-          </Content>
-        </Layout>
+          </div>
+        </div>
     );
   }
 }
 
 export default App;
+
+//style={{ display: 'flex', flexDirection: 'column', width: '50%', margin: 'auto', marginTop: 96, marginBottom: 32 }}
