@@ -7,6 +7,8 @@ import Visualization from './Visualization'
 import jobs from '../fixtures/jobs'
 import degrees from '../fixtures/degrees'
 import projects from '../fixtures/projects'
+import navigationConstants from '../fixtures/navigationConstants'
+import backgroundImage from '../images/background.jpg'
 import '../styles/App.css'
 
 class App extends Component {
@@ -34,16 +36,16 @@ class App extends Component {
   }
   onMenuClick(section){
     switch(section){
-      case 'CAREER_PROFILE':
+      case navigationConstants.CAREER_PROFILE:
         this.scrollTo({ top: this.careerProfileRef.current.offsetTop - 75 })
         break      
-      case 'WORK_EXPERIENCE':
+      case navigationConstants.WORK_EXPERIENCE:
         this.scrollTo({ top: this.workExperienceRef.current.offsetTop - 75 })
         break
-      case 'EDUCATION':
+      case navigationConstants.EDUCATION:
         this.scrollTo({ top: this.educationRef.current.offsetTop - 75 })
         break
-      case 'PROJECTS':
+      case navigationConstants.PROJECTS:
         this.scrollTo({ top: this.projectsRef.current.offsetTop - 75 })
         break
       default:
@@ -54,10 +56,10 @@ class App extends Component {
     const isMobile = width <= 500;
 
     return (
-        <div>
-          <div style={{ overflow: 'auto', display: 'flex', justifyContent: 'center', background: '#e7e7e7'}}>
+        <div style ={{ backgroundImage: `url(${backgroundImage})`, backgroundRepeat: 'noRepeat', backgroundAttachment: 'fixed', backgroundSize: '100% auto' }}>
+          <div style={{ overflow: 'auto', display: 'flex', justifyContent: 'center'}}>
             <NavBar onMenuClick={this.onMenuClick.bind(this)} isMobile={isMobile}/>
-            <div style={{ marginTop: 84, width: 500, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <div style={{ marginTop: 75, width: 500, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <SectionHeader header={"Career Profile"} ref={this.careerProfileRef}/>
                 <CareerProfile />
                 <SectionHeader header={"Work Experience"} ref={this.workExperienceRef}/>

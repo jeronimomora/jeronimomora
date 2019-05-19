@@ -51,4 +51,4 @@ const embeddedSensors = {
 	),
 }
 
-export default [masters, cncCV, embeddedSensors]
+export default Object.freeze([masters, cncCV, embeddedSensors])

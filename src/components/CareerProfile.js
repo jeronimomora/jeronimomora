@@ -11,7 +11,7 @@ const CareerProfile = (props) => (
 		<Card style={{ marginTop: 15 }}>
 			<CardContent>
 			 	<CardMedia
-			 	  style={{ margin: 'auto', height: 200, width: 200, display: 'flex', flexDirection: 'row', justifyContent: 'center' }}
+			 	  style={{ margin: 'auto', marginBottom: 15, height: 200, width: 200, display: 'flex', flexDirection: 'row', justifyContent: 'center' }}
 		          src={jeronimo}
 		          component="img"
 		          title="Jeronimo Mora"

@@ -72,4 +72,4 @@ const ucdavis = {
 	content: generateBulletedList(ucdavisContentItems)
 }
 
-export default [fictiv_cge2, fictiv_cge1, llnl, ucdavis]
+export default Object.freeze([fictiv_cge2, fictiv_cge1, llnl, ucdavis])

@@ -12,4 +12,4 @@ const bsMechanicalEngineering = {
 	date: 'October 2015 - June 2016',
 }
 
-export default [msMechanicalEngineering, bsMechanicalEngineering]
+export default Object.freeze([msMechanicalEngineering, bsMechanicalEngineering])

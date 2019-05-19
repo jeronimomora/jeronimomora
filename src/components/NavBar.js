@@ -3,6 +3,7 @@ import AppBar from '@material-ui/core/AppBar'
 import Button from '@material-ui/core/Button'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
+import navigationConstants from '../fixtures/navigationConstants'
 import SimpleMenu from './SimpleMenu'
 
 const NavBar = (props) => {
@@ -16,16 +17,16 @@ const NavBar = (props) => {
 		                {
 		                	props.isMobile ? <SimpleMenu onMenuClick={props.onMenuClick} color="inherit"/> : 
 		                	<div>
-				                <Button color='inherit' onClick={() => props.onMenuClick('CAREER_PROFILE')}>
+				                <Button color='inherit' onClick={() => props.onMenuClick(navigationConstants.CAREER_PROFILE)}>
 				                	Career Profile
 				                </Button>
-				                <Button color='inherit' onClick={() => props.onMenuClick('WORK_EXPERIENCE')}>
+				                <Button color='inherit' onClick={() => props.onMenuClick(navigationConstants.WORK_EXPERIENCE)}>
 				                	Work Experience
 				                </Button>
-				                <Button color='inherit' onClick={() => props.onMenuClick('EDUCATION')}>
+				                <Button color='inherit' onClick={() => props.onMenuClick(navigationConstants.EDUCATION)}>
 				                	Education
 				                </Button>
-				                <Button color='inherit' onClick={() => props.onMenuClick('PROJECTS')}>
+				                <Button color='inherit' onClick={() => props.onMenuClick(navigationConstants.PROJECTS)}>
 				                	Projects
 				                </Button>
 			                </div>
