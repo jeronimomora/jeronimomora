@@ -8,7 +8,7 @@ import jobs from '../fixtures/jobs'
 import degrees from '../fixtures/degrees'
 import projects from '../fixtures/projects'
 import navigationConstants from '../fixtures/navigationConstants'
-import backgroundImage from '../images/background.jpg'
+import backgroundImage from '../images/background2.png'
 import '../styles/App.css'
 
 class App extends Component {
@@ -56,7 +56,7 @@ class App extends Component {
     const isMobile = width <= 500;
 
     return (
-        <div style ={{ backgroundImage: `url(${backgroundImage})`, backgroundRepeat: 'noRepeat', backgroundAttachment: 'fixed', backgroundSize: '100% auto' }}>
+        <div style ={{ backgroundImage: `url(${backgroundImage})`, backgroundAttachment: 'fixed' }}>
           <div style={{ overflow: 'auto', display: 'flex', justifyContent: 'center'}}>
             <NavBar onMenuClick={this.onMenuClick.bind(this)} isMobile={isMobile}/>
             <div style={{ marginTop: 75, width: 500, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
