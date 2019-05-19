@@ -3,6 +3,7 @@ import Experience from './Experience'
 import CareerProfile from './CareerProfile'
 import SectionHeader from './SectionHeader'
 import NavBar from './NavBar'
+import Visualization from './Visualization'
 import jobs from '../fixtures/jobs'
 import degrees from '../fixtures/degrees'
 import projects from '../fixtures/projects'
@@ -15,9 +16,21 @@ class App extends Component {
     this.workExperienceRef = React.createRef()
     this.educationRef = React.createRef()
     this.projectsRef = React.createRef()
+    this.state = {
+      width: window.innerWidth,
+    };
+  }
+  componentWillMount() {
+    window.addEventListener('resize', this.onWindowSizeChange);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onWindowSizeChange);
   }
   scrollTo({ top }){
     window.scrollTo({ top, behavior: 'smooth' })
+  }
+  onWindowSizeChange = () => {
+    this.setState({ width: window.innerWidth });
   }
   onMenuClick(section){
     switch(section){
@@ -37,18 +50,23 @@ class App extends Component {
     }
   } 
   render() {
+    const { width } = this.state;
+    const isMobile = width <= 500;
+
     return (
-        <div style={{ background: '#F7F7F7', overflow: 'auto', display: 'flex', justifyContent: 'center'}}>
-          <NavBar onMenuClick={this.onMenuClick.bind(this)}/>
-          <div style={{ marginTop: 84, width: 500, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <SectionHeader header={"Career Profile"} ref={this.careerProfileRef}/>
-              <CareerProfile />
-              <SectionHeader header={"Work Experience"} ref={this.workExperienceRef}/>
-              <Experience experiences={jobs}/>              
-              <SectionHeader header={"Education"} ref={this.educationRef}/>
-              <Experience experiences={degrees} />              
-              <SectionHeader header={"Projects"} ref={this.projectsRef}/>
-              <Experience experiences={projects} />
+        <div>
+          <div style={{ overflow: 'auto', display: 'flex', justifyContent: 'center', background: '#e7e7e7'}}>
+            <NavBar onMenuClick={this.onMenuClick.bind(this)} isMobile={isMobile}/>
+            <div style={{ marginTop: 84, width: 500, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <SectionHeader header={"Career Profile"} ref={this.careerProfileRef}/>
+                <CareerProfile />
+                <SectionHeader header={"Work Experience"} ref={this.workExperienceRef}/>
+                <Experience experiences={jobs}/>              
+                <SectionHeader header={"Education"} ref={this.educationRef}/>
+                <Experience experiences={degrees} />              
+                <SectionHeader header={"Projects"} ref={this.projectsRef}/>
+                <Experience experiences={projects} />
+            </div>
           </div>
         </div>
     );

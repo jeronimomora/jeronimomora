@@ -11,14 +11,14 @@ const CareerProfile = (props) => (
 		<Card style={{ marginTop: 15 }}>
 			<CardContent>
 			 	<CardMedia
-			 	  style={{ marginLeft: 125, marginBottom: 10, height: 200, width: 200, display: 'flex', flexDirection: 'row', justifyContent: 'center' }}
+			 	  style={{ margin: 'auto', height: 200, width: 200, display: 'flex', flexDirection: 'row', justifyContent: 'center' }}
 		          src={jeronimo}
 		          component="img"
 		          title="Jeronimo Mora"
 		        />
 				<Typography variant='body1'> 
 					Computational geometry engineer at Fictiv and UC Berkeley graduate with an M.S. in Mechanical Engineering. 
-					Experience in C++, Python, THREE.js, React, DFM/DFx, CAD/CAM and more. Inventor on 2 filed patents, author on 2 published papers.
+					Experience in C++, Python, THREE.js, React, DFM/DFx, CAD/CAM and more. Inventor on 2 filed patents, author on 3 published papers.
 				</Typography>
 			</CardContent>
 		</Card>

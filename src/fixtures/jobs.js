@@ -21,12 +21,19 @@ const fictivContentItems = [
 `• Worked in a cross-functional software team to architect and create a new 3D model viewer in THREE.js to enable DFM visualizations`,
 ]
 
-const fictiv = {
-	title: 'Computational Geometry Engineer I/II',
+const fictiv_cge1 = {
+	title: 'Computational Geometry Engineer I',
   institution: 'Fictiv',
 	city: "San Francisco, CA",
-	date: "September 2018 - Present",
-	content: generateBulletedList(fictivContentItems)
+	date: "September 2018 - November 2018",
+}
+
+const fictiv_cge2 = {
+  title: 'Computational Geometry Engineer II',
+  institution: 'Fictiv',
+  city: "San Francisco, CA",
+  date: "November 2018 - Present",
+  content: generateBulletedList(fictivContentItems)
 }
 
 const llnlContentItems = [
@@ -52,6 +59,7 @@ const llnl = {
 }
 
 const ucdavisContentItems = [
+  <>• Author of paper published in <a href="https://pubs.acs.org/doi/10.1021/acs.langmuir.9b00313" target="_blank" rel="noopener noreferrer">Langmuir</a></>,
   `• Prepare particle suspensions, measured their conductivities and pH`,
   `• Used confocal microscope to study height bifurcation of colloids in basic solution when subject to AC electric fields`
 ]
@@ -64,4 +72,4 @@ const ucdavis = {
 	content: generateBulletedList(ucdavisContentItems)
 }
 
-export default [fictiv, llnl, ucdavis]
+export default [fictiv_cge2, fictiv_cge1, llnl, ucdavis]
