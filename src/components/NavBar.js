@@ -14,7 +14,7 @@ const NavBar = (props) => {
 		            <Toolbar style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
 		            	<div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
 			                <Typography variant="title" color="inherit">
-			                	Jeronimo Mora
+			                	{ props.isVeryCompact ? "Jeronimo" : "Jeronimo Mora" }
 			                </Typography>
 			                <Button style={{ marginLeft: 15 }} onClick={() => window.open("https://linkedin.com/in/jeronimomora", "_blank")}>
 				                <SvgIcon style={{ color: 'white'}}>
