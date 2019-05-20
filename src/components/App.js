@@ -3,12 +3,11 @@ import Experience from './Experience'
 import CareerProfile from './CareerProfile'
 import SectionHeader from './SectionHeader'
 import NavBar from './NavBar'
-import Visualization from './Visualization'
 import jobs from '../fixtures/jobs'
 import degrees from '../fixtures/degrees'
 import projects from '../fixtures/projects'
 import navigationConstants from '../fixtures/navigationConstants'
-import backgroundImage from '../images/background2.png'
+import backgroundImage from '../images/background.png'
 import '../styles/App.css'
 
 class App extends Component {

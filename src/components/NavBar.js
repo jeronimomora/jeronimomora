@@ -9,7 +9,7 @@ import SimpleMenu from './SimpleMenu'
 const NavBar = (props) => {
     return(
         <div>
-	        <AppBar position="fixed" style={{ background: '#333333', boxShadow: 'none'}}>
+	        <AppBar position="fixed" style={{ background: '#5D909A', boxShadow: 'none'}}>
 		            <Toolbar style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
 		                <Typography variant="title" color="inherit">
 		                	Jeronimo Mora
