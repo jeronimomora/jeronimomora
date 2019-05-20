@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from '@material-ui/core/Card'
+import Avatar from '@material-ui/core/Avatar';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import jeronimo from '../images/jeronimo.png'
 import '../styles/CareerProfile.css'
@@ -10,11 +10,9 @@ const CareerProfile = (props) => (
 	<div style={{ marginBottom: 15 }}>
 		<Card style={{ marginTop: 15 }}>
 			<CardContent>
-			 	<CardMedia
+			 	<Avatar
 			 	  style={{ margin: 'auto', marginBottom: 15, height: 200, width: 200, display: 'flex', flexDirection: 'row', justifyContent: 'center' }}
 		          src={jeronimo}
-		          component="img"
-		          title="Jeronimo Mora"
 		        />
 				<Typography variant='body1'> 
 					Computational geometry engineer at Fictiv and UC Berkeley graduate with an M.S. in Mechanical Engineering. 
