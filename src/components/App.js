@@ -52,12 +52,12 @@ class App extends Component {
   } 
   render() {
     const { width } = this.state;
-    const isMobile = width <= 500;
+    const isCompact = width <= 850;
 
     return (
         <div style ={{ backgroundImage: `url(${backgroundImage})`, backgroundAttachment: 'fixed' }}>
           <div style={{ overflow: 'auto', display: 'flex', justifyContent: 'center'}}>
-            <NavBar onMenuClick={this.onMenuClick.bind(this)} isMobile={isMobile}/>
+            <NavBar onMenuClick={this.onMenuClick.bind(this)} isCompact={isCompact}/>
             <div style={{ marginTop: 75, width: 500, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <SectionHeader header={"Career Profile"} ref={this.careerProfileRef}/>
                 <CareerProfile />
