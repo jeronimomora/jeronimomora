@@ -1,6 +1,17 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography';
 
+const website = {
+	title: 'This website!',
+	content: (
+		<Typography variant='body1'>
+			Used React and material-ui components to structure and build this website.
+			Building this website allowed me to practice a new skill (front-end javascript)
+			and make something I thought was rather cool! The website is deployed to Firebase.
+        </Typography>
+        ),
+}
+
 const masters = {
 	title: 'Investigation into Energy Efficiency of Vector Field Based CNC Toolpaths',
 	content: (
@@ -17,6 +28,7 @@ const masters = {
         </Typography>
         ),
 }
+
 const cncCV = {
 	title: '3D Printer Word Search Solver',
 	content: (
@@ -51,4 +63,4 @@ const embeddedSensors = {
 	),
 }
 
-export default Object.freeze([masters, cncCV, embeddedSensors])
+export default Object.freeze([website, masters, cncCV, embeddedSensors])

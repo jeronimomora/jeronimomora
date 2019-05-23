@@ -10,6 +10,8 @@ import navigationConstants from '../fixtures/navigationConstants'
 import backgroundImage from '../images/background.png'
 import '../styles/App.css'
 
+const SECTION_MARGIN_TOP = 75
+
 class App extends Component {
   constructor(){
     super()
@@ -36,36 +38,37 @@ class App extends Component {
   onMenuClick(section){
     switch(section){
       case navigationConstants.CAREER_PROFILE:
-        this.scrollTo({ top: this.careerProfileRef.current.offsetTop - 75 })
+        this.scrollTo({ top: this.careerProfileRef.current.offsetTop - SECTION_MARGIN_TOP })
         break      
       case navigationConstants.WORK_EXPERIENCE:
-        this.scrollTo({ top: this.workExperienceRef.current.offsetTop - 75 })
+        this.scrollTo({ top: this.workExperienceRef.current.offsetTop - SECTION_MARGIN_TOP })
         break
       case navigationConstants.EDUCATION:
-        this.scrollTo({ top: this.educationRef.current.offsetTop - 75 })
+        this.scrollTo({ top: this.educationRef.current.offsetTop - SECTION_MARGIN_TOP })
         break
       case navigationConstants.PROJECTS:
-        this.scrollTo({ top: this.projectsRef.current.offsetTop - 75 })
+        this.scrollTo({ top: this.projectsRef.current.offsetTop - SECTION_MARGIN_TOP })
         break
       default:
     }
   } 
   render() {
     const { width } = this.state;
-    const isCompact = width <= 850;
-    const isVeryCompact = width <= 425;
+    const shouldHaveNavigationMenu = width <= 850;
+    const isCompact = width <= 425;
+    const isMobile = width <= 425;
 
     return (
         <div style ={{ backgroundImage: `url(${backgroundImage})`, backgroundAttachment: 'fixed' }}>
           <div style={{ overflow: 'auto', display: 'flex', justifyContent: 'center'}}>
-            <NavBar onMenuClick={this.onMenuClick.bind(this)} isCompact={isCompact} isVeryCompact={isVeryCompact}/>
-            <div style={{ marginTop: 75, width: 500, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <NavBar onMenuClick={this.onMenuClick.bind(this)} isMobile={isMobile} shouldHaveNavigationMenu={shouldHaveNavigationMenu}/>
+            <div style={{ marginTop: SECTION_MARGIN_TOP, width: 500, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <SectionHeader header={"Career Profile"} ref={this.careerProfileRef}/>
                 <CareerProfile />
                 <SectionHeader header={"Work Experience"} ref={this.workExperienceRef}/>
-                <Experience experiences={jobs}/>              
+                <Experience experiences={jobs} isCompact={isCompact}/>              
                 <SectionHeader header={"Education"} ref={this.educationRef}/>
-                <Experience experiences={degrees} />              
+                <Experience experiences={degrees} isCompact={isCompact}/>              
                 <SectionHeader header={"Projects"} ref={this.projectsRef}/>
                 <Experience experiences={projects} />
             </div>

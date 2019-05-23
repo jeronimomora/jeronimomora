@@ -5,7 +5,7 @@ import '../styles/Experience.css'
 const Experience = (props) => (
 	<div style={{ marginBottom: 15 }} >
 		{props.experiences.map((experience, index) => {
-			return <ExperienceItem key={index} {...experience}/>
+			return <ExperienceItem key={index} isCompact={props.isCompact} {...experience}/>
 		})}
 	 </div>
 )
