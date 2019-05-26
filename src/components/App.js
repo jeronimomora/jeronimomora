@@ -56,12 +56,11 @@ class App extends Component {
     const { width } = this.state;
     const shouldHaveNavigationMenu = width <= 850;
     const isCompact = width <= 425;
-    const isMobile = width <= 425;
 
     return (
         <div style ={{ backgroundImage: `url(${backgroundImage})`, backgroundAttachment: 'fixed' }}>
           <div style={{ overflow: 'auto', display: 'flex', justifyContent: 'center'}}>
-            <NavBar onMenuClick={this.onMenuClick.bind(this)} isMobile={isMobile} shouldHaveNavigationMenu={shouldHaveNavigationMenu}/>
+            <NavBar onMenuClick={this.onMenuClick.bind(this)} isCompact={isCompact} shouldHaveNavigationMenu={shouldHaveNavigationMenu}/>
             <div style={{ marginTop: SECTION_MARGIN_TOP, width: 500, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <SectionHeader header={"Career Profile"} ref={this.careerProfileRef}/>
                 <CareerProfile />

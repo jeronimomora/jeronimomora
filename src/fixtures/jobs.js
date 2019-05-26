@@ -17,7 +17,7 @@ const generateBulletedList = (itemArray) => (
 const fictivContentItems = [
 `• Wrote software in C++ and Python to process CAD part files and predict the cost of manufacturing`,
 `• Used mechanical engineering knowledge to write software that gives automatic DFM feedback`,
-`• Wrote custom Genetic Algorithm to analyze historical orders and make predictions`,
+`• Used genetic algorithm to analyze historical orders and predict pricing parameters`,
 `• Worked in a cross-functional software team to architect and create a new 3D model viewer in THREE.js to enable DFM visualizations`,
 ]
 
