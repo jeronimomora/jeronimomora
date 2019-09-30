@@ -3,3 +3,16 @@ body, .root {
 	width: 100%;
 	margin: 0;
 }
+
+.app {
+	background-attachment: fixed;
+	overflow: auto;
+	display: flex;
+	justify-content: center;
+}
+.app-sections {
+	width: 600px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}

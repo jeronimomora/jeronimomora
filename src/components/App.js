@@ -7,7 +7,7 @@ import jobs from '../fixtures/jobs'
 import degrees from '../fixtures/degrees'
 import projects from '../fixtures/projects'
 import navigationConstants from '../fixtures/navigationConstants'
-import backgroundImage from '../images/background.png'
+import backgroundImage from '../images/background2.png'
 import '../styles/App.css'
 
 const SECTION_MARGIN_TOP = 75
@@ -58,10 +58,9 @@ class App extends Component {
     const isCompact = width <= 425;
 
     return (
-        <div style ={{ backgroundImage: `url(${backgroundImage})`, backgroundAttachment: 'fixed' }}>
-          <div style={{ overflow: 'auto', display: 'flex', justifyContent: 'center'}}>
+        <div className='app' style ={{ backgroundImage: `url(${backgroundImage})`}}>
             <NavBar onMenuClick={this.onMenuClick.bind(this)} isCompact={isCompact} shouldHaveNavigationMenu={shouldHaveNavigationMenu}/>
-            <div style={{ marginTop: SECTION_MARGIN_TOP, width: 500, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <div className='app-sections' style={{ marginTop: SECTION_MARGIN_TOP}}>
                 <SectionHeader header={"Career Profile"} ref={this.careerProfileRef}/>
                 <CareerProfile />
                 <SectionHeader header={"Work Experience"} ref={this.workExperienceRef}/>
@@ -71,7 +70,6 @@ class App extends Component {
                 <SectionHeader header={"Projects"} ref={this.projectsRef}/>
                 <Experience experiences={projects} />
             </div>
-          </div>
         </div>
     );
   }

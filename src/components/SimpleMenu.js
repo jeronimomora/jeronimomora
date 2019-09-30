@@ -4,6 +4,13 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import navigationConstants from '../fixtures/navigationConstants'
 
+const {
+  CAREER_PROFILE,
+  WORK_EXPERIENCE,
+  EDUCATION,
+  PROJECTS
+} = navigationConstants
+
 class SimpleMenu extends React.Component {
   state = {
     anchorEl: null,
@@ -37,10 +44,10 @@ class SimpleMenu extends React.Component {
           open={Boolean(anchorEl)}
           onClose={this.handleClose}
         >
-          <MenuItem onClick={() => this.handleClose(navigationConstants.CAREER_PROFILE)}>Career Profile</MenuItem>
-          <MenuItem onClick={() => this.handleClose(navigationConstants.WORK_EXPERIENCE)}>Work Experience</MenuItem>
-          <MenuItem onClick={() => this.handleClose(navigationConstants.EDUCATION)}>Education</MenuItem>
-          <MenuItem onClick={() => this.handleClose(navigationConstants.PROJECTS)}>Projects</MenuItem>
+          <MenuItem onClick={() => this.handleClose(CAREER_PROFILE)}>Career Profile</MenuItem>
+          <MenuItem onClick={() => this.handleClose(WORK_EXPERIENCE)}>Work Experience</MenuItem>
+          <MenuItem onClick={() => this.handleClose(EDUCATION)}>Education</MenuItem>
+          <MenuItem onClick={() => this.handleClose(PROJECTS)}>Projects</MenuItem>
         </Menu>
       </div>
     );
