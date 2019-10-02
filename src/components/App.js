@@ -56,21 +56,20 @@ class App extends Component {
   } 
   render() {
     const { width } = this.state;
-    const shouldHaveNavigationMenu = width <= 850;
-    const isCompact = width <= 425;
+    const isCompact = width <= 500;
 
     return (
         <div className='app' style ={{ backgroundImage: `url(${backgroundImage})`}}>
-            <NavBar onMenuClick={this.onMenuClick.bind(this)} isCompact={isCompact} shouldHaveNavigationMenu={shouldHaveNavigationMenu}/>
+            <NavBar onMenuClick={this.onMenuClick.bind(this)} isCompact={isCompact}/>
             <div className='app-sections' style={{ marginTop: SECTION_MARGIN_TOP}}>
                 <SectionHeader header={"Career Profile"} ref={this.careerProfileRef}/>
-                <CareerProfile />
+                <CareerProfile isCompact={isCompact}/>
                 <SectionHeader header={"Work Experience"} ref={this.workExperienceRef}/>
                 <Experience experiences={jobs} isCompact={isCompact}/>              
                 <SectionHeader header={"Education"} ref={this.educationRef}/>
                 <Experience experiences={degrees} isCompact={isCompact}/>              
                 <SectionHeader header={"Projects"} ref={this.projectsRef}/>
-                <Experience experiences={projects} />
+                <Experience experiences={projects} isCompact={isCompact}/>
             </div>
         </div>
     );

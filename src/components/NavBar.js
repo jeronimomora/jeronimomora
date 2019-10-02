@@ -2,7 +2,7 @@ import React from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import SimpleMenu from './SimpleMenu'
+import CustomMenu from './CustomMenu'
 import CustomIconButton from './CustomIconButton'
 import linkedInSvgPath from '../staticData/linkedInSvgPath'
 import githubSvgPath from '../staticData/githubSvgPath'
@@ -27,7 +27,7 @@ const NavBar = (props) => {
 							svgPath={githubSvgPath}
 						/>
 					</div>
-					<SimpleMenu onMenuClick={props.onMenuClick} color="inherit"/>
+					<CustomMenu onMenuClick={props.onMenuClick} color="inherit"/>
 				</Toolbar>
 	        </AppBar>
         </div>

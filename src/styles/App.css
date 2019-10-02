@@ -14,7 +14,7 @@ a {
 	justify-content: center;
 }
 .app-sections {
-	width: 600px;
+	width: 500px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
