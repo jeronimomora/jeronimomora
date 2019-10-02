@@ -4,9 +4,12 @@ body, .root {
 	margin: 0;
 }
 
+a {
+	color: white;
+}
+
 .app {
 	background-attachment: fixed;
-	overflow: auto;
 	display: flex;
 	justify-content: center;
 }

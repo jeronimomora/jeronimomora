@@ -3,14 +3,16 @@ import Experience from './Experience'
 import CareerProfile from './CareerProfile'
 import SectionHeader from './SectionHeader'
 import NavBar from './NavBar'
-import jobs from '../fixtures/jobs'
-import degrees from '../fixtures/degrees'
-import projects from '../fixtures/projects'
-import navigationConstants from '../fixtures/navigationConstants'
-import backgroundImage from '../images/background2.png'
+import jobs from '../staticData/jobs'
+import degrees from '../staticData/degrees'
+import projects from '../staticData/projects'
+import navigationConstants from '../staticData/navigationConstants'
+import backgroundImage from '../images/background.png'
 import '../styles/App.css'
 
 const SECTION_MARGIN_TOP = 75
+export const NAV_COLOR = '#333333'
+export const NAV_HOVER_COLOR = '#444444'
 
 class App extends Component {
   constructor(){
