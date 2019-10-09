@@ -1,13 +1,24 @@
 import React from 'react'
-import Avatar from '@material-ui/core/Avatar';
-import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles'
+import Avatar from '@material-ui/core/Avatar'
+import Typography from '@material-ui/core/Typography'
 import jeronimo from '../images/jeronimo.png'
 import '../styles/CareerProfile.css'
 
+const StyledAvatar = withStyles(theme => ({
+	root: {
+		margin: 'auto',
+		marginBottom: 15,
+		height: 200,
+		width: 200,
+		display: 'flex',
+		justifyContent: 'center'
+	},
+}))(Avatar)
+
 const CareerProfile = (props) => (
 	<div className='career-profile'>
-		<Avatar
-			style={{ margin: 'auto', marginBottom: 15, height: 200, width: 200, display: 'flex', justifyContent: 'center' }}
+		<StyledAvatar
 			src={jeronimo}
 		/>
 		<Typography variant='body1' style={props.isCompact ? { marginLeft: 15, marginRight: 15 }: null }> 

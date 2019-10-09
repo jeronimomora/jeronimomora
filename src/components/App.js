@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Experience from './Experience'
 import CareerProfile from './CareerProfile'
 import SectionHeader from './SectionHeader'
@@ -23,19 +23,19 @@ class App extends Component {
     this.projectsRef = React.createRef()
     this.state = {
       width: window.innerWidth,
-    };
+    }
   }
   componentWillMount() {
-    window.addEventListener('resize', this.onWindowSizeChange);
+    window.addEventListener('resize', this.onWindowSizeChange)
   }
   componentWillUnmount() {
-    window.removeEventListener('resize', this.onWindowSizeChange);
+    window.removeEventListener('resize', this.onWindowSizeChange)
   }
   scrollTo({ top }){
     window.scrollTo({ top, behavior: 'smooth' })
   }
   onWindowSizeChange = () => {
-    this.setState({ width: window.innerWidth });
+    this.setState({ width: window.innerWidth })
   }
   onMenuClick(section){
     switch(section){
@@ -55,8 +55,8 @@ class App extends Component {
     }
   } 
   render() {
-    const { width } = this.state;
-    const isCompact = width <= 500;
+    const { width } = this.state
+    const isCompact = width <= 500
 
     return (
         <div className='app' style ={{ backgroundImage: `url(${backgroundImage})`}}>
@@ -72,8 +72,8 @@ class App extends Component {
                 <Experience experiences={projects} isCompact={isCompact}/>
             </div>
         </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
