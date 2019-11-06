@@ -2,7 +2,7 @@ import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Avatar from '@material-ui/core/Avatar'
 import Typography from '@material-ui/core/Typography'
-import jeronimo from '../images/jeronimo.png'
+import jeronimo from '../images/jeronimo.jpeg'
 import '../styles/CareerProfile.css'
 
 const StyledAvatar = withStyles(theme => ({
