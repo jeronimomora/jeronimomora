@@ -73,6 +73,7 @@ class CustomMenu extends React.Component {
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}
           onClose={this.handleClose}
+          disableScrollLock={true}
         >
           <StyledMenuItem onClick={() => this.handleClose(CAREER_PROFILE)}>Career Profile</StyledMenuItem>
           <StyledMenuItem onClick={() => this.handleClose(WORK_EXPERIENCE)}>Work Experience</StyledMenuItem>
