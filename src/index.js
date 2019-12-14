@@ -4,6 +4,7 @@ import smoothscroll from 'smoothscroll-polyfill';
 import App from './components/App'
 import * as serviceWorker from './serviceWorker'
 
+// Allow for scrollToOptions on ie/safari/edge
 smoothscroll.polyfill();
 
 ReactDOM.render(<App />, document.getElementById('root'))
