@@ -1,7 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import smoothscroll from 'smoothscroll-polyfill';
 import App from './components/App'
 import * as serviceWorker from './serviceWorker'
+
+smoothscroll.polyfill();
 
 ReactDOM.render(<App />, document.getElementById('root'))
 
