@@ -2,7 +2,7 @@ const msMechanicalEngineering = {
 	title: 'M.S. Mechanical Engineering',
 	institution: 'UC Berkeley',
 	city: "Berkeley, CA",
-	date: "September 2018 - Present",
+	date: "September 2016 - May 2018",
 }
 
 const bsMechanicalEngineering = {
