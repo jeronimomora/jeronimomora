@@ -9,6 +9,7 @@ import projects from '../staticData/projects'
 import navigationConstants from '../staticData/navigationConstants'
 import backgroundImage from '../images/background.png'
 import '../styles/App.css'
+import LangsAndFrameworks from './LangsAndFrameworks'
 
 const SECTION_MARGIN_TOP = 75
 export const NAV_COLOR = '#333333'
@@ -64,6 +65,8 @@ class App extends Component {
             <div className='app-sections' style={{ marginTop: SECTION_MARGIN_TOP}}>
                 <SectionHeader header={"Career Profile"} ref={this.careerProfileRef}/>
                 <CareerProfile isCompact={isCompact}/>
+                <SectionHeader header={"Languages and Frameworks"} ref={this.workExperienceRef}/>
+                <LangsAndFrameworks />
                 <SectionHeader header={"Work Experience"} ref={this.workExperienceRef}/>
                 <Experience experiences={jobs} isCompact={isCompact}/>              
                 <SectionHeader header={"Education"} ref={this.educationRef}/>
