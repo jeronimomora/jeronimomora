@@ -14,15 +14,15 @@ import reactPath from '../staticData/svgPaths/react'
 import tsPath from '../staticData/svgPaths/typescript'
 
 const mySvgIcon = (paths) => {
-    return (<SvgIcon 
-        viewBox='0 0 128 128' 
-        style={{ 
+    return (<SvgIcon
+        viewBox='0 0 128 128'
+        style={{
             color: 'white',
             width: '100px',
-            height: '100px'            
+            height: '100px'
         }}
     >
-        {paths.map(svgPath => <path d={svgPath} />)}
+        {paths.map((svgPath, index) => <path d={svgPath} key={index} />)}
     </SvgIcon>)
 }
 
@@ -30,10 +30,10 @@ const gridItem = (pathArray) => {
     const xs = 4
     const sm = 3
     return (
-        <Grid 
-            item 
-            xs={xs} 
-            sm={sm} 
+        <Grid
+            item
+            xs={xs}
+            sm={sm}
             style={{ marginBottom: '15px' }}>
             {mySvgIcon(pathArray)}
         </Grid>
@@ -41,12 +41,12 @@ const gridItem = (pathArray) => {
 }
 
 export default (props) => (
-    <Grid 
-        container 
-        justify="space-between" 
-        style={{ 
-            marginBottom: '15px', 
-            marginLeft: '15px' 
+    <Grid
+        container
+        justify="space-between"
+        style={{
+            marginBottom: '15px',
+            marginLeft: '15px'
         }}
     >
         {gridItem([jsPath])}
@@ -59,6 +59,6 @@ export default (props) => (
         {gridItem([postgresPath])}
         {gridItem([cppPath])}
         {gridItem([dockerPath])}
-        {gridItem(pythonPathArray)}    
+        {gridItem(pythonPathArray)}
     </Grid>
 )
