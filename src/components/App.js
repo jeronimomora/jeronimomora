@@ -5,7 +5,6 @@ import SectionHeader from './SectionHeader'
 import NavBar from './NavBar'
 import jobs from '../staticData/jobs'
 import degrees from '../staticData/degrees'
-import projects from '../staticData/projects'
 import navigationConstants from '../staticData/navigationConstants'
 import backgroundImage from '../images/background.png'
 import Skills from './Skills'
@@ -54,9 +53,6 @@ class App extends Component {
       case navigationConstants.EDUCATION:
         this.scrollTo({ top: this.educationRef.current.offsetTop - SECTION_MARGIN_TOP })
         break
-      case navigationConstants.PROJECTS:
-        this.scrollTo({ top: this.projectsRef.current.offsetTop - SECTION_MARGIN_TOP })
-        break
       default:
     }
   } 
@@ -76,8 +72,6 @@ class App extends Component {
                 <Experience experiences={jobs} isCompact={isCompact}/>              
                 <SectionHeader header={"Education"} ref={this.educationRef}/>
                 <Experience experiences={degrees} isCompact={isCompact}/>              
-                <SectionHeader header={"Projects"} ref={this.projectsRef}/>
-                <Experience experiences={projects} isCompact={isCompact}/>
             </div>
         </div>
     )

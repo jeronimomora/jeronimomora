@@ -11,7 +11,6 @@ const {
   SKILLS,
   WORK_EXPERIENCE,
   EDUCATION,
-  PROJECTS
 } = navigationConstants
 
 const StyledMenuItem = withStyles(theme => ({
@@ -80,7 +79,6 @@ class CustomMenu extends React.Component {
           <StyledMenuItem onClick={() => this.handleClose(SKILLS)}>Skills</StyledMenuItem>
           <StyledMenuItem onClick={() => this.handleClose(WORK_EXPERIENCE)}>Work Experience</StyledMenuItem>
           <StyledMenuItem onClick={() => this.handleClose(EDUCATION)}>Education</StyledMenuItem>
-          <StyledMenuItem onClick={() => this.handleClose(PROJECTS)}>Projects</StyledMenuItem>
         </StyledMenu>
       </div>
     )

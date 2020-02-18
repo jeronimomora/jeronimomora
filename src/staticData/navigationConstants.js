@@ -3,5 +3,4 @@ export default Object.freeze({
 	SKILLS: 'SKILLS',
 	WORK_EXPERIENCE: 'WORK_EXPERIENCE',
 	EDUCATION: 'EDUCATION',
-	PROJECTS: 'PROJECTS',
 })
