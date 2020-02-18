@@ -1,4 +1,5 @@
 import React from 'react'
+import Grid from '@material-ui/core/Grid'
 import SvgIcon from '@material-ui/core/SvgIcon'
 import babelPath from '../staticData/svgPaths/babel'
 import cppPath from '../staticData/svgPaths/cpp'
@@ -25,16 +26,39 @@ const mySvgIcon = (paths) => {
     </SvgIcon>)
 }
 
-export default (props) => (<div>
-        {mySvgIcon([babelPath])}
-        {mySvgIcon([cppPath])}
-        {mySvgIcon(cssPathArray)}
-        {mySvgIcon([dockerPath])}
-        {mySvgIcon([htmlPath])}
-        {mySvgIcon([jsPath])}
-        {mySvgIcon([nodePath])}
-        {mySvgIcon(pythonPathArray)}
-        {mySvgIcon([postgresPath])}
-        {mySvgIcon([reactPath])}
-        {mySvgIcon([tsPath])}
-    </div>)
+const gridItem = (pathArray) => {
+    const xs = 4
+    const sm = 3
+    return (
+        <Grid 
+            item 
+            xs={xs} 
+            sm={sm} 
+            style={{ marginBottom: '15px' }}>
+            {mySvgIcon(pathArray)}
+        </Grid>
+    )
+}
+
+export default (props) => (
+    <Grid 
+        container 
+        justify="space-between" 
+        style={{ 
+            marginBottom: '15px', 
+            marginLeft: '15px' 
+        }}
+    >
+        {gridItem([jsPath])}
+        {gridItem([nodePath])}
+        {gridItem([htmlPath])}
+        {gridItem(cssPathArray)}
+        {gridItem([tsPath])}
+        {gridItem([reactPath])}
+        {gridItem([babelPath])}
+        {gridItem([postgresPath])}
+        {gridItem([cppPath])}
+        {gridItem([dockerPath])}
+        {gridItem(pythonPathArray)}    
+    </Grid>
+)

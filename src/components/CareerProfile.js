@@ -22,8 +22,8 @@ const CareerProfile = (props) => (
 			src={jeronimo}
 		/>
 		<Typography variant='body1' style={props.isCompact ? { marginLeft: 15, marginRight: 15 }: null }> 
-			Computational geometry engineer at Fictiv and UC Berkeley graduate with an M.S. in Mechanical Engineering. 
-			Experience in C++, Python, THREE.js, React, GraphQL, DFM/DFx, CAD/CAM and more. Inventor on 1 issued patent (2 filed), author on 3 published papers.
+		Software engineer, mechanical engineer, inventor, published scientist, lifelong learner, 
+		and professional scrum master with a knack and passion for agile problem solving. 
 		</Typography>
 	</div>
 )

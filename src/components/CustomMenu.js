@@ -8,6 +8,7 @@ import { NAV_COLOR, NAV_HOVER_COLOR } from './App'
 
 const {
   CAREER_PROFILE,
+  SKILLS,
   WORK_EXPERIENCE,
   EDUCATION,
   PROJECTS
@@ -75,7 +76,8 @@ class CustomMenu extends React.Component {
           onClose={this.handleClose}
           disableScrollLock={true}
         >
-          <StyledMenuItem onClick={() => this.handleClose(CAREER_PROFILE)}>Career Profile</StyledMenuItem>
+          <StyledMenuItem onClick={() => this.handleClose(CAREER_PROFILE)}>Top</StyledMenuItem>
+          <StyledMenuItem onClick={() => this.handleClose(SKILLS)}>Skills</StyledMenuItem>
           <StyledMenuItem onClick={() => this.handleClose(WORK_EXPERIENCE)}>Work Experience</StyledMenuItem>
           <StyledMenuItem onClick={() => this.handleClose(EDUCATION)}>Education</StyledMenuItem>
           <StyledMenuItem onClick={() => this.handleClose(PROJECTS)}>Projects</StyledMenuItem>
