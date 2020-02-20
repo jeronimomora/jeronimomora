@@ -1,6 +1,7 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import SvgIcon from '@material-ui/core/SvgIcon'
+import Viewer from '../components/Viewer'
 import babelPath from '../staticData/svgPaths/babel'
 import cppPath from '../staticData/svgPaths/cpp'
 import { cssPathArray } from '../staticData/svgPaths/css'
@@ -19,7 +20,9 @@ const mySvgIcon = (paths) => {
         style={{
             color: 'white',
             width: '80px',
-            height: '80px'
+            height: '80px',
+            display: 'block',
+            margin: 'auto',
         }}
     >
         {paths.map((svgPath, index) => <path d={svgPath} key={index} />)}
@@ -41,25 +44,29 @@ const gridItem = (pathArray) => {
 }
 
 export default (props) => (
-    <Grid
-        container
-        justify="space-between"
-        style={{
-            marginBottom: '15px',
-            marginLeft: '30px',
-            marginRight: '30px',
-        }}
-    >
-        {gridItem([jsPath])}
-        {gridItem([nodePath])}
-        {gridItem([htmlPath])}
-        {gridItem(cssPathArray)}
-        {gridItem([tsPath])}
-        {gridItem([reactPath])}
-        {gridItem([babelPath])}
-        {gridItem([postgresPath])}
-        {gridItem([cppPath])}
-        {gridItem([dockerPath])}
-        {gridItem(pythonPathArray)}
-    </Grid>
+    <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+        <p style={{ color: 'white'}}>3d viewer is a work in progress</p>
+        <Viewer />
+        <Grid
+            container
+            justify="space-between"
+            style={{
+                marginBottom: '15px',
+                marginLeft: '30px',
+                marginRight: '30px',
+            }}
+        >
+            {gridItem([jsPath])}
+            {gridItem([nodePath])}
+            {gridItem([htmlPath])}
+            {gridItem(cssPathArray)}
+            {gridItem([tsPath])}
+            {gridItem([reactPath])}
+            {gridItem([babelPath])}
+            {gridItem([postgresPath])}
+            {gridItem([cppPath])}
+            {gridItem([dockerPath])}
+            {gridItem(pythonPathArray)}
+        </Grid>
+    </div>
 )
