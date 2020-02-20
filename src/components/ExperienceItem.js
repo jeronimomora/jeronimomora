@@ -6,7 +6,7 @@ const ExperienceItem = ({title, institution, city, date, content, isCompact}) =>
 	<div className="experience-item">
 		{
 			isCompact ? 
-		<div style={{ display: 'flex', justifyContent: 'center', marginLeft: 15, marginRight: 15, flexDirection: 'column'}}>
+		<div style={{ display: 'flex', justifyContent: 'center', marginLeft: 30, marginRight: 30, flexDirection: 'column'}}>
 			<Typography variant="h6">{title}</Typography>
 			<Typography variant="h6">{institution}</Typography>
 			<Typography variant="body1">{city}</Typography>

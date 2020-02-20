@@ -18,8 +18,8 @@ const mySvgIcon = (paths) => {
         viewBox='0 0 128 128'
         style={{
             color: 'white',
-            width: '100px',
-            height: '100px'
+            width: '80px',
+            height: '80px'
         }}
     >
         {paths.map((svgPath, index) => <path d={svgPath} key={index} />)}
@@ -46,7 +46,8 @@ export default (props) => (
         justify="space-between"
         style={{
             marginBottom: '15px',
-            marginLeft: '15px'
+            marginLeft: '30px',
+            marginRight: '30px',
         }}
     >
         {gridItem([jsPath])}

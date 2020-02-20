@@ -21,7 +21,7 @@ const CareerProfile = (props) => (
 		<StyledAvatar
 			src={jeronimo}
 		/>
-		<Typography variant='body1' style={props.isCompact ? { marginLeft: 15, marginRight: 15 }: null }> 
+		<Typography variant='body1' style={props.isCompact ? { marginLeft: 30, marginRight: 30 }: null }> 
 		Software engineer, mechanical engineer, inventor, published scientist, lifelong learner, 
 		and professional scrum master with a knack and passion for agile problem solving. 
 		</Typography>

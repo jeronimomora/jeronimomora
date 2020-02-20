@@ -12,6 +12,7 @@ a {
 	background-attachment: fixed;
 	display: flex;
 	justify-content: center;
+	overflow-x: hidden;
 }
 .app-sections {
 	width: 500px;
