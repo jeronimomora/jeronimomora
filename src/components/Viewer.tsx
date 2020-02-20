@@ -7,7 +7,10 @@ import {
     BoxBufferGeometry, 
     AmbientLight, 
     WebGLRenderer, 
-    PointLight
+    PointLight,
+    Color,
+    Vector3,
+    Group
 } from 'three'
 
 const Viewer = (props: any) => {
@@ -20,9 +23,23 @@ const Viewer = (props: any) => {
         const boxMaterial = new MeshPhongMaterial({
             color: 'red'
         })
-        const box = new Mesh(boxGeometry, boxMaterial)
+        const box = new Mesh(boxGeometry, boxMaterial);
+        const box2 = new Mesh(boxGeometry, boxMaterial.clone());
+        const box3 = new Mesh(boxGeometry, boxMaterial.clone());
 
-        scene.add(box)
+        (box2.material as MeshPhongMaterial).color = new Color('green');
+        (box3.material as MeshPhongMaterial).color = new Color('blue');
+
+        box2.position.sub(new Vector3(100, 50, 50))
+        box3.position.add(new Vector3(100, 50, 50))
+
+        const boxGroup = new Group()
+
+        boxGroup.add(box)
+        boxGroup.add(box2)
+        boxGroup.add(box3)
+
+        scene.add(boxGroup)
 
         const ambientLight = new AmbientLight(0x404040) // soft white light
         scene.add(ambientLight)
@@ -52,7 +69,7 @@ const Viewer = (props: any) => {
             1,
             1000
         )
-        camera.position.set(100, 100, 100)
+        camera.position.set(200, 200, 200)
         camera.lookAt(0, 0, 0)
         camera.updateProjectionMatrix()
 
@@ -60,10 +77,17 @@ const Viewer = (props: any) => {
         camera.add(pointLight)
         scene.add(camera)
 
+        const rotateBox = (mesh: THREE.Object3D) => {
+            mesh.rotation.x += 0.05
+            mesh.rotation.y += 0.05
+            mesh.rotation.z += 0.05
+        }
+
         const render = () => {
-            box.rotation.x += 0.1
-            box.rotation.y += 0.1
-            box.rotation.z += 0.1
+            rotateBox(box)
+            rotateBox(box2)
+            rotateBox(box3)
+            rotateBox(boxGroup)
             renderer.render(scene, camera)
         }
 
@@ -79,7 +103,7 @@ const Viewer = (props: any) => {
     return (
         <div 
             style={{ 
-                width: '50%',
+                width: '75%',
                 minHeight: '300px',
             }} 
             ref={divRef}

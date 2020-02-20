@@ -2,6 +2,7 @@ import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import SvgIcon from '@material-ui/core/SvgIcon'
 import Viewer from '../components/Viewer'
+import awsPath from '../staticData/svgPaths/aws'
 import babelPath from '../staticData/svgPaths/babel'
 import cppPath from '../staticData/svgPaths/cpp'
 import { cssPathArray } from '../staticData/svgPaths/css'
@@ -65,8 +66,9 @@ export default (props) => (
             {gridItem([babelPath])}
             {gridItem([postgresPath])}
             {gridItem([cppPath])}
-            {gridItem([dockerPath])}
             {gridItem(pythonPathArray)}
+            {gridItem([dockerPath])}
+            {gridItem([awsPath])}
         </Grid>
     </div>
 )
