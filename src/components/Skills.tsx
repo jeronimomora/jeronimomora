@@ -15,7 +15,7 @@ import { pythonPathArray } from '../staticData/svgPaths/python'
 import reactPath from '../staticData/svgPaths/react'
 import tsPath from '../staticData/svgPaths/typescript'
 
-const mySvgIcon = (paths) => {
+const mySvgIcon = (paths: string[]) => {
     return (<SvgIcon
         viewBox='0 0 128 128'
         style={{
@@ -30,7 +30,7 @@ const mySvgIcon = (paths) => {
     </SvgIcon>)
 }
 
-const gridItem = (pathArray) => {
+const gridItem = (pathArray: string[]) => {
     const xs = 4
     const sm = 3
     return (
@@ -44,7 +44,7 @@ const gridItem = (pathArray) => {
     )
 }
 
-export default (props) => (
+export default (props: undefined) => (
     <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
         <Viewer />
         <Grid
