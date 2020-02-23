@@ -40,6 +40,20 @@ const colorBox = (box: BoxWithDefaultColor, color?: string) => {
     (box.material as MeshPhongMaterial).color = new Color(color || box.defaultColor)
 }
 
+const updateRendererAndCamera = (
+    renderer: WebGLRenderer, 
+    camera: OrthographicCamera,
+    width: number,
+    height: number
+) => {
+    renderer.setSize(width, height, false)
+    camera.left = -width / 2
+    camera.right = width / 2
+    camera.top = height / 2
+    camera.bottom = - height / 2
+    camera.updateProjectionMatrix()
+}
+
 export const useViewer = (divRef:RefObject<HTMLDivElement>) => {
 
     const hoveredBox = useRef<BoxWithDefaultColor | null>(null)
@@ -74,25 +88,27 @@ export const useViewer = (divRef:RefObject<HTMLDivElement>) => {
         })
         renderer.setClearColor(0x000000, 0)
 
+        // values are defaults for construction of object. to be resized later
+        const camera = new OrthographicCamera(
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1000
+        )
+
         // defaults
         let width = 100
         let height = 100
-        if (divRef && divRef.current) {
+        if (divRef?.current) {
             width = divRef.current.clientWidth
             height = divRef.current.clientHeight
             divRef.current.appendChild(renderer.domElement)
         }
 
-        renderer.setSize(width, height, false)
+        updateRendererAndCamera(renderer, camera, width, height)
 
-        const camera = new OrthographicCamera(
-            -width / 2,
-            width / 2,
-            height / 2,
-            -height / 2,
-            1,
-            1000
-        )
         camera.position.set(200, 200, 200)
         camera.lookAt(0, 0, 0)
         camera.updateProjectionMatrix()
@@ -119,6 +135,21 @@ export const useViewer = (divRef:RefObject<HTMLDivElement>) => {
 
         renderer.domElement.addEventListener('mouseleave', (event) => {
             doRaycast.current = false
+        })
+        
+        renderer.domElement.addEventListener('wheel', (event) => {
+            const canvas = renderer.domElement
+            const boundingRect = canvas.getBoundingClientRect()
+            mouse.x = ((event.clientX - boundingRect.left)/canvas.width) * 2 - 1;
+            mouse.y = -((event.clientY - boundingRect.top)/ canvas.height ) * 2 + 1;
+        })
+
+        window.addEventListener('resize' , () => {
+            if(divRef?.current){
+                width = divRef.current.clientWidth
+                height = divRef.current.clientHeight
+                updateRendererAndCamera(renderer, camera, width, height)
+            }
         })
 
         const rotateBox = (mesh: THREE.Object3D) => {
