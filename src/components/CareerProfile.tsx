@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Props } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Avatar from '@material-ui/core/Avatar'
 import Typography from '@material-ui/core/Typography'
@@ -16,12 +16,16 @@ const StyledAvatar = withStyles(theme => ({
 	},
 }))(Avatar)
 
-const CareerProfile = (props) => (
+type PropsType = {
+	isCompact: boolean
+}
+
+const CareerProfile = (props: PropsType) => (
 	<div className='career-profile'>
 		<StyledAvatar
 			src={jeronimo}
 		/>
-		<Typography variant='body1' style={props.isCompact ? { marginLeft: 30, marginRight: 30 }: null }> 
+		<Typography variant='body1' style={props.isCompact ? { marginLeft: 30, marginRight: 30 }: undefined }> 
 		Software engineer, mechanical engineer, inventor, published scientist, lifelong learner, 
 		and professional scrum master with a knack and passion for agile problem solving. 
 		</Typography>
