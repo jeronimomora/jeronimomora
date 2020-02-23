@@ -23,10 +23,14 @@ const StyledAppBar = withStyles(theme => ({
 	root: {
 		background: NAV_COLOR,
 		boxShadow: 'none'
-	},
+	}, 
 }))(AppBar)
 
-const NavBar = (props) => {
+type PropsType = {
+	isCompact: boolean
+	onMenuClick: () => void
+}
+const NavBar = (props: PropsType) => {
     return(
 		<StyledAppBar position="fixed">
 			<StyledToolbar>

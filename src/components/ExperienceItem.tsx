@@ -2,7 +2,21 @@ import React from 'react'
 import Typography from '@material-ui/core/Typography'
 import '../styles/ExperienceItem.css'
 
-const ExperienceItem = ({title, institution, city, date, isCompact}) => (
+type PropsType = {
+	title: string,
+	institution: string,
+	city: string,
+	date: string,
+	isCompact: boolean
+}
+
+const ExperienceItem = ({ 
+	title,
+	institution,
+	city,
+	date,
+	isCompact
+}: PropsType) => (
 	<div className="experience-item">
 		{
 			isCompact ? 
