@@ -44,7 +44,7 @@ const gridItem = (pathArray: string[]) => {
     )
 }
 
-export default (props: undefined) => (
+ const Skills = (props: {}) => (
     <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
         <Viewer />
         <Grid
@@ -71,3 +71,5 @@ export default (props: undefined) => (
         </Grid>
     </div>
 )
+
+export default Skills

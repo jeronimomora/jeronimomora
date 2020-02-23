@@ -1,4 +1,4 @@
-import React, { Props } from 'react'
+import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Avatar from '@material-ui/core/Avatar'
 import Typography from '@material-ui/core/Typography'

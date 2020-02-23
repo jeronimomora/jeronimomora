@@ -5,7 +5,7 @@ import {
     useViewer
 } from './logic'
 
-const Viewer = (props: any) => {
+const Viewer = (props: {}) => {
     const divRef = useRef<HTMLDivElement>(null)
 
     useViewer(divRef)
