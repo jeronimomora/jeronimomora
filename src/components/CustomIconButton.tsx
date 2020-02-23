@@ -13,7 +13,12 @@ const StyledIconButton = withStyles(theme => ({
     }
 }))(IconButton)
 
-const CustomIconButton = props => (
+type PropsType = {
+    link: string
+    svgPath: string
+}
+
+const CustomIconButton = (props: PropsType) => (
     <StyledIconButton onClick={() => window.open(props.link, "_blank")}>
         <SvgIcon style={{ color: 'white'}}>
             <path d={props.svgPath}/>

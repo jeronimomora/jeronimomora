@@ -3,10 +3,10 @@ import Typography from '@material-ui/core/Typography'
 import '../styles/ExperienceItem.css'
 
 type PropsType = {
-	title: string,
-	institution: string,
-	city: string,
-	date: string,
+	title: string
+	institution: string
+	city: string
+	date: string
 	isCompact: boolean
 }
 
