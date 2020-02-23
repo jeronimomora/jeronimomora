@@ -7,9 +7,11 @@ import CustomMenu from './CustomMenu'
 import CustomIconButton from './CustomIconButton'
 import linkedInSvgPath from '../staticData/svgPaths/linkedIn'
 import githubSvgPath from '../staticData/svgPaths/github'
+import { NavigationConstantType } from '../staticData/navigationConstants'
 import '../styles/NavBar.css'
 
-import { NAV_COLOR } from './App'
+export const NAV_COLOR = '#333333'
+export const NAV_HOVER_COLOR = '#444444'
 
 const StyledToolbar = withStyles(theme => ({
 	root: {
@@ -28,7 +30,7 @@ const StyledAppBar = withStyles(theme => ({
 
 type PropsType = {
 	isCompact: boolean
-	onMenuClick: () => void
+	onMenuClick: (section: NavigationConstantType) => void
 }
 const NavBar = (props: PropsType) => {
     return(

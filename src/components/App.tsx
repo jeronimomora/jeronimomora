@@ -5,26 +5,34 @@ import SectionHeader from './SectionHeader'
 import NavBar from './NavBar'
 import jobs from '../staticData/jobs'
 import degrees from '../staticData/degrees'
-import navigationConstants from '../staticData/navigationConstants'
+import navigationConstants, { NavigationConstantType } from '../staticData/navigationConstants'
 import backgroundImage from '../images/background.png'
 import Skills from './Skills'
 
 import '../styles/App.css'
 
 const SECTION_MARGIN_TOP = 75
-export const NAV_COLOR = '#333333'
-export const NAV_HOVER_COLOR = '#444444'
+
+const getIsCompact = (windowWidth: number) => (windowWidth <= 500)
 
 class App extends Component {
-  constructor(){
-    super()
-    this.careerProfileRef = React.createRef()
-    this.workExperienceRef = React.createRef()
-    this.skillsRef = React.createRef()
-    this.educationRef = React.createRef()
-    this.projectsRef = React.createRef()
+  careerProfileRef: React.RefObject<HTMLDivElement>
+  workExperienceRef: React.RefObject<HTMLDivElement>
+  skillsRef: React.RefObject<HTMLDivElement>
+  educationRef: React.RefObject<HTMLDivElement>
+  projectsRef: React.RefObject<HTMLDivElement>
+  state: {
+    isCompact: boolean
+  }
+  constructor(props: {}){
+    super(props)
+    this.careerProfileRef = React.createRef<HTMLDivElement>()
+    this.workExperienceRef = React.createRef<HTMLDivElement>()
+    this.skillsRef = React.createRef<HTMLDivElement>()
+    this.educationRef = React.createRef<HTMLDivElement>()
+    this.projectsRef = React.createRef<HTMLDivElement>()
     this.state = {
-      width: window.innerWidth,
+      isCompact: getIsCompact(window.innerWidth),
     }
   }
   componentWillMount() {
@@ -33,32 +41,31 @@ class App extends Component {
   componentWillUnmount() {
     window.removeEventListener('resize', this.onWindowSizeChange)
   }
-  scrollTo({ top }){
+  scrollTo({ top }: { top: number }){
     window.scrollTo({ top, behavior: 'smooth' })
   }
   onWindowSizeChange = () => {
-    this.setState({ width: window.innerWidth })
+    this.setState({ isCompact: getIsCompact(window.innerWidth) })
   }
-  onMenuClick(section){
+  onMenuClick(section: NavigationConstantType){
     switch(section){
       case navigationConstants.CAREER_PROFILE:
-        this.scrollTo({ top: this.careerProfileRef.current.offsetTop - SECTION_MARGIN_TOP })
+        this.scrollTo({ top: this.careerProfileRef.current!.offsetTop - SECTION_MARGIN_TOP })
         break      
       case navigationConstants.SKILLS:
-        this.scrollTo({ top: this.skillsRef.current.offsetTop - SECTION_MARGIN_TOP })
+        this.scrollTo({ top: this.skillsRef.current!.offsetTop - SECTION_MARGIN_TOP })
         break
       case navigationConstants.WORK_EXPERIENCE:
-        this.scrollTo({ top: this.workExperienceRef.current.offsetTop - SECTION_MARGIN_TOP })
+        this.scrollTo({ top: this.workExperienceRef.current!.offsetTop - SECTION_MARGIN_TOP })
         break
       case navigationConstants.EDUCATION:
-        this.scrollTo({ top: this.educationRef.current.offsetTop - SECTION_MARGIN_TOP })
+        this.scrollTo({ top: this.educationRef.current!.offsetTop - SECTION_MARGIN_TOP })
         break
       default:
     }
   } 
   render() {
-    const { width } = this.state
-    const isCompact = width <= 500
+    const { isCompact } = this.state
 
     return (
         <div className='app' style ={{ backgroundImage: `url(${backgroundImage})`}}>

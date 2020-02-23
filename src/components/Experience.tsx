@@ -3,7 +3,7 @@ import ExperienceItem from './ExperienceItem'
 import { ExperienceType } from '../staticData/types'
 
 type PropsType = {
-	experiences: ExperienceType[]
+	experiences: readonly ExperienceType[]
 	isCompact: boolean
 }
 

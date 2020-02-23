@@ -2,7 +2,7 @@ import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import SvgIcon from '@material-ui/core/SvgIcon'
 import IconButton from '@material-ui/core/IconButton'
-import { NAV_HOVER_COLOR } from './App'
+import { NAV_HOVER_COLOR } from './NavBar'
 
 const StyledIconButton = withStyles(theme => ({
     root: {

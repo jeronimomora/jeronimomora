@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import navigationConstants, { NavigationConstantType } from '../staticData/navigationConstants'
-import { NAV_COLOR, NAV_HOVER_COLOR } from './App'
+import { NAV_COLOR, NAV_HOVER_COLOR } from './NavBar'
 
 const {
   CAREER_PROFILE,
