@@ -1,7 +1,7 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import SvgIcon from '@material-ui/core/SvgIcon'
-import Viewer from '../components/Viewer'
+import Viewer from './Viewer'
 import awsPath from '../staticData/svgPaths/aws'
 import babelPath from '../staticData/svgPaths/babel'
 import cppPath from '../staticData/svgPaths/cpp'
@@ -46,7 +46,6 @@ const gridItem = (pathArray) => {
 
 export default (props) => (
     <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-        <p style={{ color: 'white'}}>3d viewer is a work in progress</p>
         <Viewer />
         <Grid
             container
