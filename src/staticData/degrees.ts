@@ -1,3 +1,5 @@
+import { ExperienceType } from './types' 
+
 const msMechanicalEngineering = {
 	title: 'M.S. Mechanical Engineering',
 	institution: 'UC Berkeley',
@@ -12,4 +14,9 @@ const bsMechanicalEngineering = {
 	date: 'October 2015 - June 2016',
 }
 
-export default Object.freeze([msMechanicalEngineering, bsMechanicalEngineering])
+const degrees: readonly ExperienceType[] = Object.freeze([
+	msMechanicalEngineering, 
+	bsMechanicalEngineering
+])
+
+export default degrees

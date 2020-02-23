@@ -1,7 +1,13 @@
 import React from 'react'
 import ExperienceItem from './ExperienceItem'
+import { ExperienceType } from '../staticData/types'
 
-const Experience = (props) => (
+type PropsType = {
+	experiences: ExperienceType[],
+	isCompact: boolean
+}
+
+const Experience = (props: PropsType) => (
 	<div>
 		{props.experiences.map((experience, index) => {
 			return <ExperienceItem key={index} isCompact={props.isCompact} {...experience}/>

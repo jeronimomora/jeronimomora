@@ -1,3 +1,5 @@
+import { ExperienceType } from './types' 
+
 const fictivCge1 = {
 	title: 'Computational Geometry Engineer I',
   	institution: 'Fictiv',
@@ -26,4 +28,11 @@ const ucdavis = {
 	date: 'October 2015 - June 2016',
 }
 
-export default Object.freeze([fictivCge2, fictivCge1, llnl, ucdavis])
+const jobs: readonly ExperienceType[] = Object.freeze([
+	fictivCge2,
+	fictivCge1,
+	llnl,
+	ucdavis
+])
+
+export default jobs
