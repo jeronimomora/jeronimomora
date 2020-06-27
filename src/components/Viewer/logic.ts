@@ -43,9 +43,9 @@ const colorBox = (box: BoxWithDefaultColor, color?: string) => {
 const updateRendererAndCamera = (
     renderer: WebGLRenderer, 
     camera: OrthographicCamera,
-    width: number,
-    height: number
 ) => {
+    const { clientHeight: height, clientWidth: width } = renderer.domElement
+
     renderer.setSize(width, height, false)
     camera.left = -width / 2
     camera.right = width / 2
@@ -99,15 +99,13 @@ export const useViewer = (divRef:RefObject<HTMLDivElement>) => {
         )
 
         // defaults
-        let width = 100
-        let height = 100
         if (divRef?.current) {
-            width = divRef.current.clientWidth
-            height = divRef.current.clientHeight
+            renderer.domElement.width = divRef.current.clientWidth
+            renderer.domElement.height = divRef.current.clientHeight
             divRef.current.appendChild(renderer.domElement)
         }
 
-        updateRendererAndCamera(renderer, camera, width, height)
+        updateRendererAndCamera(renderer, camera)
 
         camera.position.set(200, 200, 200)
         camera.lookAt(0, 0, 0)
@@ -145,11 +143,7 @@ export const useViewer = (divRef:RefObject<HTMLDivElement>) => {
         })
 
         window.addEventListener('resize' , () => {
-            if(divRef?.current){
-                width = divRef.current.clientWidth
-                height = divRef.current.clientHeight
-                updateRendererAndCamera(renderer, camera, width, height)
-            }
+            updateRendererAndCamera(renderer, camera)
         })
 
         const rotateBox = (mesh: THREE.Object3D) => {
