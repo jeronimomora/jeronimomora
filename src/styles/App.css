@@ -1,21 +1,22 @@
-body, .root {
-	width: 100%;
-	margin: 0;
+body,
+.root {
+  width: 100%;
+  margin: 0;
 }
 
 a {
-	color: white;
+  color: white;
 }
 
 .app {
-	background-attachment: fixed;
-	display: flex;
-	justify-content: center;
-	overflow-x: hidden;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
 }
 .app-sections {
-	width: 500px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

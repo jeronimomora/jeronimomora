@@ -1,66 +1,70 @@
-import React, { useState } from 'react'
-import { withStyles } from '@material-ui/core/styles'
-import Button from '@material-ui/core/Button'
-import Menu from '@material-ui/core/Menu'
-import MenuItem from '@material-ui/core/MenuItem'
-import navigationConstants, { NavigationConstantType } from '../staticData/navigationConstants'
-import { NAV_COLOR, NAV_HOVER_COLOR } from './NavBar'
+import React, { useState } from "react";
+import { withStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import navigationConstants, {
+  NavigationConstantType,
+} from "../staticData/navigationConstants";
+import { NAV_COLOR, NAV_HOVER_COLOR } from "./NavBar";
 
 const {
   CAREER_PROFILE,
   SKILLS,
   WORK_EXPERIENCE,
   EDUCATION,
-} = navigationConstants
+} = navigationConstants;
 
-const StyledMenuItem = withStyles(theme => ({
+const StyledMenuItem = withStyles((theme) => ({
   root: {
-    color: 'white',
+    color: "white",
     background: NAV_COLOR,
-    '&:focus': {
+    "&:focus": {
       backgroundColor: NAV_COLOR,
     },
-    '&:hover':{
+    "&:hover": {
       backgroundColor: NAV_HOVER_COLOR,
-    }
+    },
   },
-}))(MenuItem)
+}))(MenuItem);
 
-const StyledMenu = withStyles(theme => ({
+const StyledMenu = withStyles((theme) => ({
   paper: {
     background: NAV_COLOR,
   },
-}))(Menu)
+}))(Menu);
 
-const StyledButton = withStyles(theme => ({
+const StyledButton = withStyles((theme) => ({
   root: {
-    '&:hover':{
+    "&:hover": {
       backgroundColor: NAV_HOVER_COLOR,
     },
-    color: "white"
-  }
-}))(Button)
+    color: "white",
+  },
+}))(Button);
 
 type PropsType = {
-  onMenuClick: (itemClicked: NavigationConstantType) => void
-}
+  onMenuClick: (itemClicked: NavigationConstantType) => void;
+};
 
 const CustomMenu = (props: PropsType) => {
-  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null)
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    setAnchorEl(event.currentTarget)
-  }
+  const handleClick = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    setAnchorEl(event.currentTarget);
+  };
 
   const handleClose = (itemClicked: NavigationConstantType) => {
-    setAnchorEl(null)
-    props.onMenuClick(itemClicked)
-  }
+    setAnchorEl(null);
+    props.onMenuClick(itemClicked);
+  };
 
   return (
     <div>
       <StyledButton
-        aria-owns={anchorEl ? 'simple-menu' : undefined}
+        aria-owns={anchorEl ? "simple-menu" : undefined}
         aria-haspopup="true"
         onClick={handleClick}
       >
@@ -73,13 +77,21 @@ const CustomMenu = (props: PropsType) => {
         onClose={handleClose}
         disableScrollLock={true}
       >
-        <StyledMenuItem onClick={() => handleClose(CAREER_PROFILE)}>Top</StyledMenuItem>
-        <StyledMenuItem onClick={() => handleClose(SKILLS)}>Skills</StyledMenuItem>
-        <StyledMenuItem onClick={() => handleClose(WORK_EXPERIENCE)}>Work Experience</StyledMenuItem>
-        <StyledMenuItem onClick={() => handleClose(EDUCATION)}>Education</StyledMenuItem>
+        <StyledMenuItem onClick={() => handleClose(CAREER_PROFILE)}>
+          Top
+        </StyledMenuItem>
+        <StyledMenuItem onClick={() => handleClose(SKILLS)}>
+          Skills
+        </StyledMenuItem>
+        <StyledMenuItem onClick={() => handleClose(WORK_EXPERIENCE)}>
+          Work Experience
+        </StyledMenuItem>
+        <StyledMenuItem onClick={() => handleClose(EDUCATION)}>
+          Education
+        </StyledMenuItem>
       </StyledMenu>
     </div>
-  )
-}
+  );
+};
 
-export default CustomMenu
+export default CustomMenu;
